@@ -11,7 +11,7 @@ interface SideMenuProps {
 
 export const SideMenu = ({ menuIsOpen, setMenuIsOpen }: SideMenuProps) => {
     return <div className={`
-            absolute w-50 top-0 right-0 h-dvh border-l 
+            absolute w-70 top-0 right-0 h-dvh border-l 
             border-l-gray-200 bg-white z-50 pt-26 p-4 flex flex-col justify-between 
             gap-4 transform transition-transform duration-300 
             ${menuIsOpen ? "translate-x-0" : "translate-x-full"}`
