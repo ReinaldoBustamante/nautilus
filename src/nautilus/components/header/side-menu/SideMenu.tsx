@@ -1,6 +1,7 @@
 import { IoHomeOutline } from "react-icons/io5"
 import { LuUsers } from "react-icons/lu"
 import { MdOutlineEmail, MdWorkOutline } from "react-icons/md"
+import { RiCalendarScheduleLine } from "react-icons/ri"
 import { RxEnter } from "react-icons/rx"
 import { Link } from "react-router"
 
@@ -26,17 +27,20 @@ export const SideMenu = ({ menuIsOpen, setMenuIsOpen }: SideMenuProps) => {
                 <span>Servicios</span>
             </Link>
             <Link to={'/'} className="font-medium hover:text-[#16B3DE] flex items-center gap-2 p-2 pr-4 pl-4  rounded-md" onClick={() => setMenuIsOpen(false)}>
-                <LuUsers size={24} />
-                <span>Nosotros</span>
-            </Link>
-            <Link to={'/'} className="font-medium hover:text-[#16B3DE] flex items-center gap-2 p-2 pr-4 pl-4  rounded-md" onClick={() => setMenuIsOpen(false)}>
                 <MdOutlineEmail size={24} />
                 <span>Contacto</span>
             </Link>
         </ul>
-        <Link to={'/auth'} className="bg-[#10ACDB] w-full text-white font-medium p-3 flex items-center gap-2 pr-4 pl-4  rounded-md">
-            <RxEnter size={24} />
-            <span>Ingresar</span>
-        </Link>
+        <div className="flex flex-col gap-3">
+            <Link to={'/auth'} className="border border-[#10ACDB] text-[#10ACDB] w-full font-medium p-3 flex items-center gap-2 pr-4 pl-4  rounded-md">
+                <RxEnter size={24} />
+                <span>Iniciar Sesión</span>
+            </Link>
+            <Link to={'/agendar'} onClick={() => setMenuIsOpen(false)} className="bg-[#10ACDB] w-full text-white font-medium p-3 flex items-center gap-2 pr-4 pl-4  rounded-md">
+                <RiCalendarScheduleLine size={24} />
+                <span>Agendar Cita</span>
+            </Link>
+        </div>
+
     </div>
 }

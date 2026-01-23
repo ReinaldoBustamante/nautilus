@@ -1,14 +1,16 @@
-import { Link } from "react-router"
+
+import { Hero } from "../../components/Hero"
+import { Benefits } from "../../components/Benefits"
+import { Instructions } from "../../components/Instructions"
+import { Services } from "../../components/Services"
+import { Contact } from "../../components/Contact"
 
 export const HomePage = () => {
-    return <div className="flex flex-col gap-4">
-        <section className="flex flex-col gap-8">
-            <h1 className="text-4xl">Tu <span className="text-[#16B3DE]">bienestar auditivo</span> es nuestra prioridad</h1>
-            <p className="text-[18px] text-gray-500">
-                En Centro Nautilus ofrecemos atención especializada en otorrinolaringología con tecnología de vanguardia y
-                un equipo médico altamente calificado.
-            </p>
-            <Link to={'/agendar'} className="bg-[#10ACDB] p-3 text-white font-semibold rounded-md text-center">Agendar Cita</Link>
-        </section>
+    return <div className="flex flex-col gap-24 md:gap-32">
+        <section><Hero /></section>
+        <section><Benefits /></section>
+        <section><Instructions /></section>
+        <section><Services /></section>
+        <section><Contact /></section>
     </div>
 }
