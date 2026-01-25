@@ -1,10 +1,7 @@
-
-import { IoCheckmarkCircleSharp } from "react-icons/io5"
-
 import { FormPatient } from "../../components/FormPatient"
 import { FormSchedule } from "../../components/FormSchedule"
 import { FormDate } from "../../components/FormDate"
-import { AiFillCheckCircle } from "react-icons/ai"
+import { FormResume } from "../../components/FormResume"
 
 
 export const BookAppointmentPage = () => {
@@ -17,19 +14,7 @@ export const BookAppointmentPage = () => {
             <section><FormDate /></section>
             <section><FormSchedule /></section>
             <section><FormPatient /></section>
-            <div className="bg-white p-4 rounded-md flex flex-col gap-4 border border-gray-300">
-                <div className="flex flex-col gap-2">
-                    <div className="flex gap-2 items-center">
-                        <AiFillCheckCircle size={32} className="mt-0.5 text-[#16B3DE]" />
-                        <h2 className="text-2xl font-semibold">Resumen de tu cita</h2>
-                    </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                    <span>Fecha no seleccionada</span>
-                    <span>Horario no seleccionado</span>
-                    <p>Total a pagar: $30.000</p>
-                </div>
-            </div>
+            <section><FormResume /></section>
         </form>
     </div>
 }
