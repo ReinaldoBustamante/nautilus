@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router"
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
-import { SideMenu } from "./side-menu/SideMenu";
 import { RxEnter } from "react-icons/rx";
+import { SideMenu } from "./SideMenu";
 
 interface HeaderProps {
     menuIsOpen: boolean,
@@ -12,7 +12,7 @@ interface HeaderProps {
 export const Header = ({ menuIsOpen, setMenuIsOpen }: HeaderProps) => {
 
     const navigate = useNavigate()
-    return <div className="w-full fixed">
+    return <div className="w-full fixed z-1000">
         <div className="border-b bg-[#FAFBFC] border-b-gray-200 flex justify-between items-center p-4 md:pl-20 md:pr-20 ">
             <img src={"/images/nautilus_logo.png"} alt="Nautilus Logo" className="w-52 " onClick={() => {
                 navigate('/')

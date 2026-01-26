@@ -1,6 +1,7 @@
 import { Outlet } from "react-router"
-import { Header } from "../components/header/Header"
+
 import { useState } from "react"
+import { Header } from "../components/ui/Header"
 
 export const NautilusLayout = () => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)

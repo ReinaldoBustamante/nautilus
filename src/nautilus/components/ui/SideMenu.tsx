@@ -1,5 +1,4 @@
 import { IoHomeOutline } from "react-icons/io5"
-import { LuUsers } from "react-icons/lu"
 import { MdOutlineEmail, MdWorkOutline } from "react-icons/md"
 import { RiCalendarScheduleLine } from "react-icons/ri"
 import { RxEnter } from "react-icons/rx"

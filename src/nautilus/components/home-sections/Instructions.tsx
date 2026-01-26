@@ -1,5 +1,6 @@
 import { SectionTitle } from "./SectionTitle"
 
+
 export const Instructions = () => {
 
     const instructions = [

@@ -1,9 +1,10 @@
 
-import { Hero } from "../../components/Hero"
-import { Benefits } from "../../components/Benefits"
-import { Instructions } from "../../components/Instructions"
-import { Services } from "../../components/Services"
-import { Contact } from "../../components/Contact"
+import { Hero } from "../../components/home-sections/Hero"
+import { Benefits } from "../../components/home-sections/Benefits"
+
+import { Services } from "../../components/home-sections/Services"
+import { Contact } from "../../components/home-sections/Contact"
+import { Instructions } from "../../components/home-sections/Instructions"
 
 export const HomePage = () => {
     return <div className="flex flex-col gap-24 md:gap-32">
