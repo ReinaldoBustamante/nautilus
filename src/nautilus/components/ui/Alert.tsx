@@ -23,9 +23,9 @@ export const Alert = ({ message, variant }: AlertProps) => {
     const styles = VARIANTS[variant]
 
     return (
-        <div className={`flex items-center gap-3 p-3 border-l-4 rounded-md ${styles.bg} ${styles.border} ${styles.text}`}>
-            <PiWarningCircle size={24} />
-            <p className="font-semibold">{message}</p>
+        <div className={`flex items-center gap-3 p-3 border-l-4 md:border-l-8 rounded-xl ${styles.bg} ${styles.border} ${styles.text} md:p-6`}>
+            <PiWarningCircle className="md:size-10" />
+            <p className="font-semibold md:text-xl">{message}</p>
         </div>
     );
 }

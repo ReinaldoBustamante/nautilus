@@ -23,34 +23,34 @@ export const FormResume = ({ watch, isValid, isSubmitting }: FormResumeProps) =>
     const rut = watch('rut')
     const email = watch('email')
 
-    return <div className="bg-white p-4 pt-8 pb-8 rounded-md flex flex-col gap-6 border border-gray-300">
+    return <div className="bg-white p-4 pt-8 pb-8 md:p-10 rounded-xl flex flex-col gap-6 border border-gray-100 shadow-lg ">
         <div className="flex flex-col gap-4">
-            <div className="flex gap-2 items-center">
-                <AiFillCheckCircle size={34} className="mt-0.5 text-[#16B3DE]" />
-                <h2 className="text-2xl font-semibold">Resumen de tu cita</h2>
+            <div className="flex gap-3 md:gap-4 items-center">
+                <AiFillCheckCircle className="mt-0.5 size-10 md:size-13 text-[#16B3DE]" />
+                <h2 className="text-xl md:text-3xl font-semibold">Resumen de tu cita</h2>
             </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 md:gap-4">
             <FormResumeCard icon={MdOutlineDateRange} title="Fecha">
-                <span className="text-[#697E8A] font-semibold text-[18px]">
+                <span className="text-[#697E8A] font-semibold text-[18px] md:text-2xl">
                     {date || 'Selecciona una fecha'}
                 </span>
             </FormResumeCard>
             <FormResumeCard icon={MdOutlineSchedule} title="Horario">
-                <span className="text-[#697E8A] font-semibold text-[18px]">
+                <span className="text-[#697E8A] font-semibold text-[18px] md:text-2xl">
                     {schedule || 'Selecciona un horario'}
                 </span>
             </FormResumeCard>
             <FormResumeCard icon={FiUser} title="Paciente">
-                <span className="text-[#697E8A] font-semibold text-[18px]">{name || 'Ingrese sus datos'}</span>
-                <span className="text-[#697E8A] font-semibold text-[14px]">{rut || ''}</span>
-                <span className="text-[#697E8A] font-semibold text-[14px]">{email || ''}</span>
-                <span className="text-[#697E8A] font-semibold text-[14px]">{phoneNumber || ''}</span>
-                <span className="text-[#697E8A] font-semibold text-[14px]">{address || ''}</span>
+                <span className="text-[#697E8A] font-semibold text-[18px] md:text-2xl">{name || 'Ingrese sus datos'}</span>
+                <span className="text-[#697E8A] font-semibold text-[14px] md:text-xl">{rut || ''}</span>
+                <span className="text-[#697E8A] font-semibold text-[14px] md:text-xl">{email || ''}</span>
+                <span className="text-[#697E8A] font-semibold text-[14px] md:text-xl">{phoneNumber || ''}</span>
+                <span className="text-[#697E8A] font-semibold text-[14px] md:text-xl">{address || ''}</span>
             </FormResumeCard>
 
-            <button className={`p-3 bg-[#16B3DE] text-white font-semibold text-[18px] rounded-md ${!isValid ? 'opacity-40' : ''}`} type="submit" disabled={!isValid || isSubmitting}>Confirmar cita</button>
+            <button className={`p-3 md:p-5 md:text-2xl bg-[#16B3DE] text-white font-semibold text-[18px] rounded-xl ${!isValid ? 'opacity-40' : 'hover:scale-101 transition-all cursor-pointer'}`} type="submit" disabled={!isValid || isSubmitting}>Confirmar cita</button>
         </div>
     </div>
 }

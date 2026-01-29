@@ -19,15 +19,15 @@ export const FormSchedule = ({ setValue, watch, schedules, isLoading }: FormSche
     const hasDate = !!watch('date');
 
     return (
-        <div className="bg-white p-4 pt-8 pb-8 rounded-md flex flex-col gap-6 border border-gray-300">
+        <div className="bg-white p-4 py-8 md:p-10 rounded-xl flex flex-col gap-6 md:gap-10 border border-gray-100 shadow-lg">
             <FormSectionTitle title='Selecciona un horario' description='Horarios disponibles para tu cita' step={2} />
             {
                 hasDate
                     ? isLoading
                         ? <Spinner />
                         : schedules.length === 0
-                            ? <Alert message="No hay horarios disponibles" variant="error"/>
-                            : <div className="grid grid-cols-2 gap-3 justify-center">
+                            ? <Alert message="No hay horarios disponibles" variant="error" />
+                            : <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
                                 {
                                     schedules.map((schedule) => {
                                         const startTime = schedule.start_time.toString().slice(11, 16);
@@ -35,17 +35,17 @@ export const FormSchedule = ({ setValue, watch, schedules, isLoading }: FormSche
                                         return (
                                             <div
                                                 key={schedule.id}
-                                                className={`p-4 pt-3 pb-3 border-2 border-gray-200 rounded-md text-center cursor-pointer transition-colors
-                                        ${startTime === currentSchedule ? 'bg-[#16B3DE] text-white border-[#16B3DE]' : 'hover:bg-gray-50'}`}
+                                                className={`p-4 md:p-6 md:border-3 border-2 border-gray-200 rounded-xl text-center cursor-pointer transition-all hover:scale-105
+                                        ${startTime === currentSchedule ? 'bg-[#16B3DE] text-white border-[#16B3DE]' : ''}`}
                                                 onClick={() => setValue('schedule', startTime, { shouldValidate: true, shouldTouch: true })}
                                             >
-                                                <span>{startTime} - {endTime}</span>
+                                                <span className="md:text-xl ">{startTime} - {endTime}</span>
                                             </div>
                                         );
                                     })
                                 }
                             </div>
-                    : <Alert message="Seleccione una fecha" variant="warning"/>
+                    : <Alert message="Seleccione una fecha" variant="warning" />
 
             }
         </div>
