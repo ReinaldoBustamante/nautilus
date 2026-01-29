@@ -5,7 +5,6 @@ import { BookAppointmentPage } from "../nautilus/pages/bookAppointment/BookAppoi
 import { AuthLayout } from "../auth/layouts/authLayout";
 import { LoginPage } from "../auth/pages/login/LoginPage";
 
-
 export const appRoutes = createBrowserRouter([
     {
         path: '/',

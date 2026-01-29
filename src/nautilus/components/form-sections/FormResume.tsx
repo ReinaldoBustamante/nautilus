@@ -9,9 +9,12 @@ import { FormResumeCard } from "./FormResumeCard"
 interface FormResumeProps {
     watch: UseFormWatch<AppointmentSchemaType>,
     isValid: boolean,
+    isSubmitting: boolean
 }
 
-export const FormResume = ({ watch, isValid }: FormResumeProps) => {
+
+export const FormResume = ({ watch, isValid, isSubmitting }: FormResumeProps) => {
+ 
     const date = watch('date')
     const schedule = watch('schedule')
     const name = watch('name')
@@ -47,7 +50,7 @@ export const FormResume = ({ watch, isValid }: FormResumeProps) => {
                 <span className="text-[#697E8A] font-semibold text-[14px]">{address || ''}</span>
             </FormResumeCard>
 
-            <button className={`p-3 bg-[#16B3DE] text-white font-semibold text-[18px] rounded-md ${!isValid ? 'opacity-40' : ''}`} type="submit" disabled={!isValid}>Confirmar cita</button>
+            <button className={`p-3 bg-[#16B3DE] text-white font-semibold text-[18px] rounded-md ${!isValid ? 'opacity-40' : ''}`} type="submit" disabled={!isValid || isSubmitting}>Confirmar cita</button>
         </div>
     </div>
 }

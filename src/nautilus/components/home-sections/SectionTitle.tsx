@@ -4,8 +4,8 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle = ({ title, description }: SectionTitleProps) => {
-    return <div className="flex flex-col gap-2 md:text-center md:w-240 self-center md:gap-8">
-        <h2 className="text-2xl md:text-4xl font-semibold">{title}</h2>
-        <p className="text-[18px] md:text-2xl text-gray-500">{description}</p>
+    return <div className="flex flex-col gap-2 md:items-center md:gap-8">
+        <h2 className="text-2xl md:text-6xl font-bold text-[#172A45]">{title}</h2>
+        <p className="text-xl md:text-center text-gray-600 md:text-3xl max-w-6xl mx-auto leading-relaxed">{description}</p>
     </div>
 }

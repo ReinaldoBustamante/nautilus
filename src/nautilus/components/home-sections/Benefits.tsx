@@ -12,17 +12,17 @@ export const Benefits = () => {
         { id: 4, title: 'Horarios Flexibles', description: 'Disponibilidad de lunes a sábado en múltiples horarios', icon: MdOutlineSchedule },
     ]
 
-    return <div className="flex flex-col gap-8 md:gap-12 ">
+    return <div className="flex flex-col gap-8 md:gap-20 ">
         <SectionTitle title='¿Por qué elegir Nautilus?' description='Combinamos tecnología con atención médica de calidad para brindarte la mejor experiencia en salud a domicilio' />
         <div className="flex flex-col gap-8 md:flex-row">
             {
                 benefits.map((benefit) => {
-                    return <div key={benefit.id} className="p-4 bg-white border border-gray-200 rounded-md flex flex-col gap-3">
-                        <div className="flex flex-col gap-3">
-                            <benefit.icon size={48} className="bg-[#E6F6FD] p-2 rounded-md" color="#0DA2E7" />
-                            <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                    return <div key={benefit.id} className="p-4 bg-[#f7fdff] rounded-xl shadow-lg flex flex-col gap-4 md:p-10 md:gap-6 hover:scale-105 transition-all">
+                        <div className="flex flex-col gap-4 md:gap-6">
+                            <benefit.icon className="bg-[#08A8D2] p-2 size-12 md:p-4 rounded-xl md:size-20" color="#FFFFFF" />
+                            <h3 className="md:text-3xl font-semibold text-xl">{benefit.title}</h3>
                         </div>
-                        <p className="text-[18px] text-gray-500">{benefit.description}</p>
+                        <p className="md:text-2xl text-xl text-gray-600 leading-relaxed">{benefit.description}</p>
                     </div>
                 })
             }
