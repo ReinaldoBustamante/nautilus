@@ -10,15 +10,15 @@ export const Instructions = () => {
     ]
     return <div className="flex flex-col gap-8 md:gap-20">
         <SectionTitle title='¿Como funciona?' description='Agendar tu cita médica a domicilio es muy sencillo' />
-        <div className="flex flex-col gap-8 md:gap-2 text-center md:flex-row">
+        <div className="flex flex-col gap-8 md:gap-2 text-center lg:flex-row">
             {
                 instructions.map(instruction => {
-                    return <div key={instruction.step} className="flex flex-col md:flex-1 gap-4">
-                        <div className="flex flex-col gap-4 md:gap-8">
+                    return <div key={instruction.step} className="flex flex-col md:flex-1 gap md:gap-4">
+                        <div className="flex flex-col gap-2 md:gap-8">
                             <span className="text-5xl md:text-7xl font-bold text-[#1eb3ce]">{instruction.step}</span>
-                            <h3 className="text-xl font-semibold md:text-3xl">{instruction.title}</h3>
+                            <h3 className="text-xl font-semibold md:text-3xl text-[#172A45]">{instruction.title}</h3>
                         </div>
-                        <p className=" text-gray-600 text-xl leading-relaxed md:text-2xl">{instruction.description}</p>
+                        <p className=" text-gray-600 text-lg leading-relaxed md:text-2xl">{instruction.description}</p>
                     </div>
                 })
             }

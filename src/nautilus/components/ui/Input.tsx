@@ -1,7 +1,7 @@
 import type { IconType } from "react-icons"
 
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     id: string
     placeholder: string
     icon: IconType,

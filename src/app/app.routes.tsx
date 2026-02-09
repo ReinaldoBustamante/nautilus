@@ -4,6 +4,13 @@ import { HomePage } from "../nautilus/pages/home/HomePage";
 import { BookAppointmentPage } from "../nautilus/pages/bookAppointment/BookAppointmentPage";
 import { AuthLayout } from "../auth/layouts/authLayout";
 import { LoginPage } from "../auth/pages/login/LoginPage";
+import { DoctorLayout } from "../doctor/layout/DoctorLayout";
+import { DashboardPage } from "../doctor/pages/home/DashboardPage";
+import { AdminLayout } from "../admin/layout/AdminLayout";
+import { PanelPage } from "../admin/pages/PanelPage";
+import { PublicRoutes } from "./PublicRoutes";
+import { PrivateRoutes } from "./PrivateRoutes";
+import { SchedulePage } from "../doctor/pages/schedule/SchedulePage";
 
 export const appRoutes = createBrowserRouter([
     {
@@ -22,11 +29,41 @@ export const appRoutes = createBrowserRouter([
     },
     {
         path: '/auth',
-        element: <AuthLayout />,
+        element: <PublicRoutes>
+            <AuthLayout />
+        </PublicRoutes>,
         children: [
             {
                 index: true,
                 element: <LoginPage />
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoutes allowedRole="doctor">
+            <DoctorLayout />
+        </PrivateRoutes>,
+        children: [
+            {
+                index: true,
+                element: <DashboardPage />
+            },
+            {
+                path: 'schedule',
+                element: <SchedulePage />
+            }
+        ]
+    },
+    {
+        path: '/panel',
+        element: <PrivateRoutes allowedRole="admin">
+            <AdminLayout />
+        </PrivateRoutes>,
+        children: [
+            {
+                index: true,
+                element: <PanelPage />
             }
         ]
     },

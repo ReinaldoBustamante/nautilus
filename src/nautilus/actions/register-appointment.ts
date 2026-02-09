@@ -7,7 +7,7 @@ export const registerAppointment = async (formData: AppointmentSchemaType) => {
         const response = await axios.post(url, {
             date: `${formData.date}T${formData.schedule}:00Z`,
             address: formData.address,
-            doctor_id: 'f31e1b4b-8976-4381-971a-1355bb32fd06',
+            doctor_id: 'eb7b67b2-24af-4c33-9eab-41ea9cc74f6c',
             email: formData.email,
             name: formData.name,
             phone_number: formData.phoneNumber,

@@ -53,10 +53,10 @@ export const BookAppointmentPage = () => {
         const obtenerData = async () => {
             setIsLoading(true); // Iniciamos carga
             try {
-                const schedulesData = await getSchedulesAvalaible('f31e1b4b-8976-4381-971a-1355bb32fd06', selectedDate);
+                const schedulesData = await getSchedulesAvalaible('eb7b67b2-24af-4c33-9eab-41ea9cc74f6c', selectedDate);
                 setSchedules(schedulesData);
             } finally {
-                setIsLoading(false); // Finalizamos carga (siempre, aunque falle)
+                setIsLoading(false); 
             }
         };
 
