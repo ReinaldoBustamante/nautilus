@@ -23,11 +23,12 @@ const validateRUT = (rut: string) => {
 
 export const appointmentSchema = z.object({
 
-
     date: z
         .string()
         .min(1, "Debes seleccionar una fecha"),
 
+    doctor_id: z.string(),
+    
     schedule: z
         .string()
         .min(1, "Debes seleccionar un horario"),
@@ -42,7 +43,7 @@ export const appointmentSchema = z.object({
         .string()
         .min(9, "El RUT debe tener al menos 9 caracteres")
         .max(12, "El RUT no puede exceder 12 caracteres")
-        .refine(validateRUT, "RUT inválido"), 
+        .refine(validateRUT, "RUT inválido"),
 
     email: z
         .string()

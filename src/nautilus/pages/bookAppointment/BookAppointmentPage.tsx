@@ -11,6 +11,8 @@ import { appointmentSchema } from "../../schemas/appointment.schemas"
 import { registerAppointment } from "../../actions/register-appointment"
 import toast from "react-hot-toast";
 import { AppointmentConfirmation } from "../../components/form-sections/AppointmentConfirmation"
+import { getDoctors } from "../../actions/get-doctors"
+import type { Doctor } from "../../interfaces/doctor.inferface"
 
 export const BookAppointmentPage = () => {
     const {
@@ -43,20 +45,31 @@ export const BookAppointmentPage = () => {
     }
 
     const [schedules, setSchedules] = useState<Schedule[]>([])
+    const [doctors, setDoctors] = useState<Doctor[]>([])
     const selectedDate = watch('date');
     const [isLoading, setIsLoading] = useState(true);
+    const [isCreated, setIsCreated] = useState(false);
 
-    const [isCreated, setIsCreated] = useState(false)
+    useEffect(() => {
+        const obtenerDoctor = async () => {
+            const doctorsData = await getDoctors()
+            setDoctors(doctorsData)
+        }
+
+        obtenerDoctor()
+    }, [])
+
     useEffect(() => {
         if (!selectedDate) return;
+        if (doctors.length === 0) return;
 
         const obtenerData = async () => {
             setIsLoading(true); // Iniciamos carga
             try {
-                const schedulesData = await getSchedulesAvalaible('eb7b67b2-24af-4c33-9eab-41ea9cc74f6c', selectedDate);
+                const schedulesData = await getSchedulesAvalaible(doctors[0].id, selectedDate);
                 setSchedules(schedulesData);
             } finally {
-                setIsLoading(false); 
+                setIsLoading(false);
             }
         };
 

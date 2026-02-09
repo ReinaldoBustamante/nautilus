@@ -13,7 +13,7 @@ export const Services = () => {
         <div className="flex flex-col md:grid gap-8 md:gap-8 md:grid-cols-2 lg:flex lg:flex-row ">
             {
                 services.map(service => {
-                    return <div className="flex flex-1 flex-col rounded-xl shadow-lg hover:scale-105 transition-all p-4 md:p-10 bg-[#F7FDFF] border border-gray-100 gap-4 md:gap-6 ">
+                    return <div key={service.name} className="flex flex-1 flex-col rounded-xl shadow-lg hover:scale-105 transition-all p-4 md:p-10 bg-[#F7FDFF] border border-gray-100 gap-4 md:gap-6 ">
                         <h3 className="text-xl font-semibold md:text-3xl text-[#172A45]">{service.name}</h3>
                         <p className="md:text-2xl text-xl text-gray-600 leading-relaxed">
                             {service.description}

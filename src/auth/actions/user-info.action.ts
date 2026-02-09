@@ -1,10 +1,9 @@
-import axios from "axios";
+import { nautilusApi } from "../../api/nautilus.api";
 
 export const userInfoAction = async (token: string) => {
 
     try {
-        const url = `https://nautilus-api-test.up.railway.app/auth/me`
-        const response = await axios.get(url, {
+        const response = await nautilusApi.get('/auth/me', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

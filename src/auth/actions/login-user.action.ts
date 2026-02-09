@@ -1,4 +1,4 @@
-import axios from "axios"
+import { nautilusApi } from "../../api/nautilus.api"
 
 interface AuthResponse {
     sub: string
@@ -8,8 +8,7 @@ interface AuthResponse {
 
 export const loginUser = async (email: string, password: string): Promise<AuthResponse> => {
     try {
-        const url = 'https://nautilus-api-test.up.railway.app/auth/login'
-        const response = await axios.post(url, { email, password })
+        const response = await nautilusApi.post('/auth/login', { email, password })
         return response.data;
     } catch (err) {
         console.log(err)

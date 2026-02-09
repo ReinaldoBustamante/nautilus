@@ -19,25 +19,25 @@ export const navRoutes = [
     { id: 'contacts', name: 'Contacto', icon: MdOutlineEmail }
 ]
 
-export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActive}: HeaderProps) => {
+export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActive }: HeaderProps) => {
     const navigate = useNavigate()
 
     return (
         <div className="w-full fixed z-1000">
             <div className="border-b bg-[#FAFBFC] border-b-gray-200 flex justify-between items-center p-4 md:pl-20 md:pr-20">
-                <img 
-                    src={"/images/nautilus_logo.png"} 
-                    alt="Nautilus Logo" 
-                    className="w-52" 
-                    onClick={() => navigate('/')} 
+                <img
+                    src={"/images/nautilus_logo.png"}
+                    alt="Nautilus Logo"
+                    className="w-52"
+                    onClick={() => navigate('/')}
                 />
-                
+
                 <nav className="hidden md:flex md:gap-12 items-center">
                     {navRoutes.map(route => (
-                        <Link 
+                        <Link
                             key={route.id}
-                            to={'/'} 
-                            className={`font-medium text-xl hover:text-[#16B3DE] ${sectionActive === route.id ? 'text-[#16B3DE]' : ''}`} 
+                            to={'/'}
+                            className={`font-medium text-xl hover:text-[#16B3DE] ${sectionActive === route.id ? 'text-[#16B3DE]' : ''}`}
                             onClick={() => {
                                 setScrollTarget("")
                                 setTimeout(() => setScrollTarget(route.id), 0)
@@ -47,8 +47,8 @@ export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActi
                         </Link>
                     ))}
 
-                    <Link 
-                        to={'/auth'} 
+                    <Link
+                        to={'/auth'}
                         className="border border-[black] text-[black] hover:border-[#10ACDB] hover:text-white hover:bg-[#10ACDB] w-full font-medium p-3 flex items-center gap-2 pr-4 pl-4 rounded-md"
                     >
                         <RxEnter size={24} />
@@ -61,7 +61,7 @@ export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActi
                     : <AiOutlineMenu className="flex md:hidden z-999" size={28} onClick={() => setMenuIsOpen(true)} />
                 }
             </div>
-            
+
             <SideMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} setScrollTarget={setScrollTarget} sectionActive={sectionActive} />
         </div>
     )

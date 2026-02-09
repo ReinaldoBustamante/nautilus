@@ -20,7 +20,7 @@ export const SideMenu = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionAc
         <ul className="flex flex-col gap-4">
             {
                 navRoutes.map(({ id, name, icon: Icon }) => {
-                    return <Link to={'/'}
+                    return <Link key={id} to={'/'}
                         className={`font-medium flex items-center p-2 pr-4 transition-all pl-4 gap-2 ${sectionActive === id && 'bg-[#10ACDB]  rounded-md text-white'}`}
                         onClick={() => {
                             setMenuIsOpen(false)

@@ -1,13 +1,13 @@
-import axios from "axios"
 import type { AppointmentSchemaType } from "../schemas/appointment.schemas"
+import { nautilusApi } from "../../api/nautilus.api";
 
 export const registerAppointment = async (formData: AppointmentSchemaType) => {
     try {
-        const url = `https://nautilus-api-test.up.railway.app/appointments/register`
-        const response = await axios.post(url, {
+
+        const response = await nautilusApi.post('/appointments/register', {
             date: `${formData.date}T${formData.schedule}:00Z`,
             address: formData.address,
-            doctor_id: 'eb7b67b2-24af-4c33-9eab-41ea9cc74f6c',
+            doctor_id: formData.doctor_id,
             email: formData.email,
             name: formData.name,
             phone_number: formData.phoneNumber,
@@ -18,5 +18,5 @@ export const registerAppointment = async (formData: AppointmentSchemaType) => {
         return response.data
     } catch (err) {
         throw err
-    }   
+    }
 }
