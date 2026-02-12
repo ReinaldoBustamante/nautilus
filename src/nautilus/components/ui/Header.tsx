@@ -28,7 +28,7 @@ export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActi
                 <img
                     src={"/images/nautilus_logo.png"}
                     alt="Nautilus Logo"
-                    className="w-52"
+                    className="w-52 cursor-pointer"
                     onClick={() => navigate('/')}
                 />
 
