@@ -37,7 +37,7 @@ export const Header = ({ menuIsOpen, setMenuIsOpen, setScrollTarget, sectionActi
                         <Link
                             key={route.id}
                             to={'/'}
-                            className={`font-medium text-xl hover:text-[#03AAC8] hover:bg-gray-300 ${sectionActive === route.id ? 'text-[#03AAC8]' : ''}`}
+                            className={`font-medium text-xl hover:text-[#03AAC8] hover:bg-gray-100 px-4 py-2 rounded-xl transition-all ${sectionActive === route.id ? 'text-[#03AAC8]' : ''}`}
                             onClick={() => {
                                 setScrollTarget("")
                                 setTimeout(() => setScrollTarget(route.id), 0)
