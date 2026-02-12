@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery, } from "@tanstack/react-query";
 import { getSchedules } from "../../actions/get-schedules";
 import { AuthStore } from "../../../auth/store/auth.store";
 import { useState } from "react";
@@ -8,7 +8,7 @@ export const SchedulePage = () => {
 
     const { token } = AuthStore()
 
-    const { data: schedules, isLoading } = useQuery({
+    const { data: schedules } = useQuery({
         queryKey: ['appointments', token],
         queryFn: () => getSchedules(token!),
         enabled: !!token,
