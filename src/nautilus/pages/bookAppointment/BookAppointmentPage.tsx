@@ -25,7 +25,7 @@ export const BookAppointmentPage = () => {
         resolver: zodResolver(appointmentSchema),
         mode: 'onTouched'
     });
-
+    console.log(errors)
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -33,7 +33,7 @@ export const BookAppointmentPage = () => {
         try {
             console.log(data)
             setIsSubmitting(true)
-            await registerAppointment(data)
+            await registerAppointment(data, doctors[0].id)
             toast.success("Cita agendada!");
             setIsCreated(true)
         } catch (error) {
@@ -72,9 +72,9 @@ export const BookAppointmentPage = () => {
                 setIsLoading(false);
             }
         };
-
         obtenerData();
     }, [selectedDate]);
+
 
     return <div className="flex flex-col gap-8 md:gap-20 p-4 md:p-20 mt-4">
 
