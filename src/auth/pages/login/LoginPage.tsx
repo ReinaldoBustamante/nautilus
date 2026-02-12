@@ -33,7 +33,7 @@ export const LoginPage = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="" className="text-lg ">Contraseña</label>
-                    <Input id="password" name='password' error="" icon={TbLockPassword} placeholder="*****" />
+                    <Input id="password" name='password' type="password" error="" icon={TbLockPassword} placeholder="*****" />
                 </div>
                 <button type="submit" className="w-full bg-[#10ACDB] p-3 md:py-4 cursor-pointer hover:scale-105 transition-all rounded-xl text-white md:text-xl font-bold">Iniciar Sesión</button>
             </form>
