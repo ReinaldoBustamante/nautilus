@@ -22,7 +22,7 @@ export const Benefits = () => {
                 benefits.map((benefit) => {
                     return <div key={benefit.id} className="
                        flex flex-col gap-3 md:gap-4 
-                     bg-[#f7fdff] hover:scale-105 transition-all rounded-xl shadow-lg 
+                     bg-[#f7fdff] rounded-xl shadow-lg 
                        p-4 md:p-10
                     ">
                         <div className="flex flex-col gap-4 md:gap-6">
