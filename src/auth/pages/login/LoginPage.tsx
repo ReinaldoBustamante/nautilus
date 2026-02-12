@@ -29,7 +29,7 @@ export const LoginPage = () => {
             <form action="" className="flex flex-col gap-6" onSubmit={handleLogin}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="" className="text-lg ">Correo electronico</label>
-                    <Input id="email" name='email' type="text" error="" icon={HiOutlineMail} placeholder="test@nautiluscenter.com" />
+                    <Input id="email" name='email' type="email" error="" icon={HiOutlineMail} placeholder="test@nautiluscenter.com" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="" className="text-lg ">Contraseña</label>
