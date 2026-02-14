@@ -6,7 +6,7 @@ import { nautilusApi } from "../../api/nautilus.api";
 export interface AppointmentInterface {
     id: string;
     appointment_date: Date;
-    appointment_status: 'pending' | 'confirmed' | 'cancelled';
+    appointment_status: 'pending' | 'confirmed' | 'cancelled' | 'completed';
     address_snapshot: string;
     email_snapshot: string;
     phone_number_snapshot: string;
