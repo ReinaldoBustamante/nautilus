@@ -68,7 +68,7 @@ export const TodayAppointment = ({ appointments }: TodayAppointmentProps) => {
                                 console.log('click')
                                 mutate({ id: appointment.id, status: 'completed' })
                             }}
-                        >{isPending ? 'Completando...' : 'Completar'}</button>
+                        >Completar</button>
                     </div>
                 </div>
             })

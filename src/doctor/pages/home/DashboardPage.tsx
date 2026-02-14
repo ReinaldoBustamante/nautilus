@@ -17,9 +17,7 @@ export const DashboardPage = () => {
             const today = new Date().toLocaleString('sv-SE', {
                 timeZone: 'America/Santiago'
             }).split(' ')[0]
-            console.log(today)
             const appointmentsOnDay = allAppointments.filter(appointment => today === String(appointment.appointment_date).split('T')[0] && appointment.appointment_status !== 'completed')
-            console.log(new Date(appointmentsOnDay[0].appointment_date).getTime())
             return appointmentsOnDay.sort((a,b) => new Date(a.appointment_date).getTime() - new Date(b.appointment_date).getTime())
         }
     });
