@@ -12,7 +12,7 @@ export const TodayAppointment = ({ appointments }: TodayAppointmentProps) => {
 
     const queryClient = useQueryClient()
 
-    const { mutate } = useMutation({
+    const { mutate, isPending, variables } = useMutation({
         mutationFn: updateAppointmentStatus,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['appointments'], exact: false })
@@ -26,6 +26,7 @@ export const TodayAppointment = ({ appointments }: TodayAppointmentProps) => {
     return <div className="flex flex-col gap-4">
         {
             appointments.map(appointment => {
+                const isThisPending = isPending && variables?.id === appointment.id
                 const linkWaze = generarLinkWaze(appointment.address_snapshot);
                 const schedule = String(appointment.appointment_date).slice(11, 16)
                 return <div className="flex flex-col gap-4 bg-white border border-gray-200 rounded-xl p-8 ">
@@ -62,12 +63,12 @@ export const TodayAppointment = ({ appointments }: TodayAppointmentProps) => {
                             </button>
                         </a>
                         <button
-                            className="px-4 py-2 bg-[#2BAB6B] text-white flex-1 rounded-xl cursor-pointer hover:bg-[#289e63]"
+                            disabled={isThisPending}
+                            className={`cursor-pointer px-4 py-2 flex-1 rounded-xl text-white 
+                                ${isThisPending ? "bg-gray-400 cursor-not-allowed" : "bg-[#2BAB6B] hover:bg-[#289e63]"}
+                            `}
                             type="button"
-                            onClick={() => {
-                                console.log('click')
-                                mutate({ id: appointment.id, status: 'completed' })
-                            }}
+                            onClick={() => mutate({ id: appointment.id, status: 'completed' })}
                         >Completar</button>
                     </div>
                 </div>
