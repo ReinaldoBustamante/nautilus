@@ -12,7 +12,7 @@ export const TodayAppointment = ({ appointments }: TodayAppointmentProps) => {
 
     const queryClient = useQueryClient()
 
-    const { mutate, isPending } = useMutation({
+    const { mutate } = useMutation({
         mutationFn: updateAppointmentStatus,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['appointments'], exact: false })
